@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+}
+
+::selection {
+  @apply bg-brand-200 text-ink-900;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition duration-150 hover:bg-brand-dark hover:shadow-hover active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-100 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition duration-150 hover:border-brand-200 hover:bg-brand-50 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+}
+
+.btn-danger {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-sm font-semibold text-red-600 ring-1 ring-inset ring-red-200 transition hover:bg-red-50 active:scale-[0.98];
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-ink-600 transition hover:bg-ink-100 hover:text-ink-900;
+}
+
+.input {
+  @apply block w-full rounded-xl border border-ink-100 bg-white px-3.5 py-2.5 text-sm text-ink-900 shadow-sm transition placeholder:text-ink-400/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand-200;
+}
+
+.label {
+  @apply mb-1.5 block text-sm font-medium text-ink-600;
+}
+
+.card {
+  @apply rounded-2xl border border-ink-100/80 bg-white shadow-soft transition duration-200;
+}
+
+.pill {
+  @apply rounded-full px-3.5 py-1.5 text-sm font-medium transition;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+.spinner {
+  @apply inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white;
+}
+
+.spinner-dark {
+  @apply inline-block h-4 w-4 animate-spin rounded-full border-2 border-ink-100 border-t-ink-600;
+}
+
+.skeleton {
+  @apply animate-pulse rounded-lg bg-ink-100;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s ease-out;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.25s ease-out;
+}
